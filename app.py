@@ -68,7 +68,7 @@ class CameraFeed:
                 break
 
             # Apply PoseAnalyzer to the frame (assuming analyze_pose is a valid method)
-            frame = self.pose_analyzer.analyze_pose(frame)
+            frame, posture_score, confidence_score = self.pose_analyzer.analyze_pose(frame)
 
             # Encode frame to JPEG format
             ret, buffer = cv2.imencode('.jpg', frame)
@@ -149,13 +149,13 @@ def predict():
         predictions = model.predict(np.expand_dims(resize/255, 0))
         print(predictions)
         prediction = 'Formal' if predictions[0] < 0.5 else 'Casual'
-        # if prediction == 'Formal':
-        #     return render_template('aiinterview.html')
+        if prediction == 'Formal':
+            return redirect(url_for('aiinterview'))
     except Exception as e:
         print(f"Error during prediction: {e}")
         return jsonify({'error': 'Prediction error'}), 500
 
-    return jsonify({'prediction': prediction})
+    # return jsonify({'prediction': prediction})
 
 if __name__ == "__main__":
     app.run(debug=True)

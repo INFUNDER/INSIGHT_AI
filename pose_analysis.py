@@ -62,7 +62,7 @@ class PoseAnalyzer:
             self.update_confidence_score(emotion)
             self.last_update_time = current_time
 
-        return frame
+        return frame, self.posture_score, self.confidence_score
 
     def analyze_posture(self, landmarks):
         left_shoulder = landmarks.landmark[self.mp_pose.PoseLandmark.LEFT_SHOULDER]
