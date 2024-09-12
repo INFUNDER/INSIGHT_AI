@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="px-4 pt-5 my-0 text-center border-bottom" style="background-color: #f0f0f0;">
+  <h1 class="display-4 fw-bold text-body-emphasis">Welcome To Insight AI</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">
+      Insight AI is an AI-driven interview coach that goes beyond traditional prep, offering real-time feedback on your answers, attire, and body language. With cutting-edge tech like NLP, computer vision, and behavioral analysis, it helps you ace every aspect of your interview, from what you say to how you present yourself!
+    </p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+      <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" style="border-radius: 70px;">Explore</button>
+    </div>
+  </div>
+  <div class="overflow-hidden" style="max-height: 30vh;">
+    <div class="container px-5">
+      <img src="/static/img2.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+    </div>
+  </div>
+</div>
+
+
+<div class="p-5 text-center bg-body-tertiary rounded-3">
+  <h1 class="text-body-emphasis">Explore Our Features</h1>
+</div>
+
+
+
+<div class="container my-10"> <!-- Added container to provide side spacing -->
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <!-- Image Column -->
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="/static/course2.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+    </div>
+    <!-- Text Column -->
+    <div class="col-lg-6 px-5">
+      <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">View Our Courses</h1>
+      <p class="lead">The course feature allows users to select from various offerings, after which the system generates tailored questions based on the selected courses and evaluates the users' responses, providing targeted feedback to enhance their learning experience.</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a href="/course"><button type="button" class="btn btn-primary btn-lg px-4 me-md-2" style="border-radius: 50px;">View</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="container my-6"> <!-- Added container to provide side spacing -->
+  <div class="row align-items-center g-5 py-5">
+    <!-- Image on the left -->
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="/static/interview.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+    </div>
+    <!-- Text on the right -->
+    <div class="col-lg-6 px-5">
+      <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">AI Interview</h1>
+      <p class="lead">The AI Interview feature simulates real interview scenarios. It analyzes both technical responses and soft skills, such as body language, attire, and speech patterns, offering actionable feedback to help users refine their interview performance and boost their confidence.</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2" style="border-radius: 50px;">View</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}
