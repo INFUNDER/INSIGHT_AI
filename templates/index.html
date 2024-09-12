@@ -7,7 +7,7 @@
       WalkIn AI is an AI-driven interview coach that goes beyond traditional prep, offering real-time feedback on your answers, attire, and body language. With cutting-edge tech like NLP, computer vision, and behavioral analysis, it helps you ace every aspect of your interview, from what you say to how you present yourself!
     </p>
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-      <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" style="border-radius: 70px;">Explore</button>
+      <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" style="border-radius: 70px;" onclick="scrollToExplore()">Explore</button>
     </div>
   </div>
   <div class="overflow-hidden" style="max-height: 30vh;">
@@ -17,11 +17,11 @@
   </div>
 </div>
 
-
+<div id="explore-section">
 <div class="p-5 text-center bg-body-tertiary rounded-3">
   <h1 class="text-body-emphasis">Explore Our Features</h1>
 </div>
-
+</div>
 
 
 <div class="container my-10"> <!-- Added container to provide side spacing -->
@@ -62,5 +62,12 @@
 </div>
 
 
+<script>
+  function scrollToExplore() {
+    document.getElementById('explore-section').scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
+  
 
 {% endblock %}
