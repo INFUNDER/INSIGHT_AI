@@ -88,7 +88,11 @@
 </style>
 
 <div class="con">
-<video id="webcam" autoplay></video>
+    <!-- <video id="webcam" autoplay >
+        <source src="{{ url_for('video_feed') }}" type="multipart/x-mixed-replace; boundary=frame">
+    </video> -->
+    <img src="{{ url_for('video_feed') }}" type="multipart/x-mixed-replace; boundary=frame">
+
 
 <div class="buttons">
     <button id="openCamera">Open Camera</button>
@@ -97,42 +101,43 @@
 </div>
 </div>
 
-<script>
-// Getting elements
-const video = document.getElementById('webcam');
-const openCameraBtn = document.getElementById('openCamera');
-const closeCameraBtn = document.getElementById('closeCamera');
-const backButton = document.getElementById('backButton');
-let stream;
+<!-- <script>
+    // Getting elements
+    const video = document.getElementById('webcam');
+    const openCameraBtn = document.getElementById('openCamera');
+    const closeCameraBtn = document.getElementById('closeCamera');
+    const backButton = document.getElementById('backButton');
+    let stream;
 
-// Function to start the webcam
-async function startCamera() {
-    try {
-        stream = await navigator.mediaDevices.getUserMedia({ video: true });
-        video.srcObject = stream;
-    } catch (err) {
-        console.error("Error accessing webcam: ", err);
+    // Function to start the webcam
+    async function startCamera() {
+        try {
+            stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            video.srcObject = stream;
+        } catch (err) {
+            console.error("Error accessing webcam: ", err);
+        }
     }
-}
 
-// Function to close the camera
-function closeCamera() {
-    if (stream) {
-        const tracks = stream.getTracks();
-        tracks.forEach(track => track.stop()); // Stops the video stream
-        video.srcObject = null;
+    // Function to close the camera
+    function closeCamera() {
+        if (stream) {
+            const tracks = stream.getTracks();
+            tracks.forEach(track => track.stop()); // Stops the video stream
+            video.srcObject = null;
+        }
     }
-}
 
-// Event listeners for buttons
-openCameraBtn.addEventListener('click', startCamera); // Opens the camera
-closeCameraBtn.addEventListener('click', closeCamera); // Closes the camera
-backButton.addEventListener('click', () => {
-    window.history.back(); // Go back to the previous page
-});
+    // Event listeners for buttons
+    openCameraBtn.addEventListener('click', startCamera); // Opens the camera
+    closeCameraBtn.addEventListener('click', closeCamera); // Closes the camera
+    backButton.addEventListener('click', () => {
+        window.history.back(); // Go back to the previous page
+    });
 
-// Start camera on page load
-startCamera();
-</script>
+    // Start camera on page load
+    startCamera();
+</script> -->
+
 
 {% endblock %}
