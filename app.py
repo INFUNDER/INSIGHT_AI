@@ -45,15 +45,18 @@ def interview():
 
 @app.route('/coursedecp')
 def coursedecp():
-    return render_template('coursedecp.html')
+    amazon_questions = AmazonQues.query.all()
+    return render_template('coursedecp.html', questions=amazon_questions)
 
 @app.route('/coursedecp2')
 def coursedecp2():
-    return render_template('coursedecp2.html')
+    amazon_questions = AmazonQues.query.all()
+    return render_template('coursedecp2.html', questions=amazon_questions)
 
 @app.route('/coursedecp3')
 def coursedecp3():
-    return render_template('coursedecp3.html')
+    amazon_questions = AmazonQues.query.all()
+    return render_template('coursedecp3.html', questions=amazon_questions)
 
 if __name__ == '__main__':
     app.run(debug=True)
