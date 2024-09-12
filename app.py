@@ -1,6 +1,34 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///interview_questions.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+
+class AmazonQues(db.Model):
+    q_num = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    questions = db.Column(db.String(250), nullable=False)
+    option_A = db.Column(db.String(250), nullable=False)
+    option_B = db.Column(db.String(250), nullable=False)
+    option_C = db.Column(db.String(250), nullable=False)
+    option_D = db.Column(db.String(250), nullable=False)
+    Answer = db.Column(db.String(2), nullable=False)
+
+class MicrosoftQues(db.Model):
+    q_num = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    questions = db.Column(db.String(250), nullable=False)
+    option_A = db.Column(db.String(250), nullable=False)
+    option_B = db.Column(db.String(250), nullable=False)
+    option_C = db.Column(db.String(250), nullable=False)
+    option_D = db.Column(db.String(250), nullable=False)
+    Answer = db.Column(db.String(2), nullable=False)
+
+with app.app_context():
+    db.create_all()
+
 
 @app.route('/')
 def home():
