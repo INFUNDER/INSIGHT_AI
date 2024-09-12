@@ -42,5 +42,18 @@ def course():
 def interview():
     return render_template('interview.html')
 
+
+@app.route('/coursedecp')
+def coursedecp():
+    return render_template('coursedecp.html')
+
+@app.route('/coursedecp2')
+def coursedecp2():
+    return render_template('coursedecp2.html')
+
+@app.route('/coursedecp3')
+def coursedecp3():
+    return render_template('coursedecp3.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

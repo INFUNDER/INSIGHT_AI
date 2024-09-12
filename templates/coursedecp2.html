@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% block body %}
+<style>
+    .con{
+        font-family: 'Arial', sans-serif;
+        background-color: #f0f4f8;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .quiz-container {
+        display: none; /* Initially hide the quiz */
+        margin-top: 20px;
+    }
+
+    h2 {
+        font-size: 28px;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .question-number {
+        font-size: 14px;
+        color: #555;
+        text-align: right;
+        margin-bottom: 20px;
+    }
+
+    .question {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #222;
+    }
+
+    .options {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 20px 0;
+    }
+
+    .options li {
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: #555;
+    }
+
+    .options input[type="radio"] {
+        margin-right: 10px;
+    }
+
+    .submit-btn {
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+
+<div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+<div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+    <h1 class="display-4 fw-bold lh-1 text-body-emphasis">Microsoft</h1>
+    <p class="lead">Life at Microsoft is dynamic and innovative, driven by a culture of collaboration and a passion for technology. Employees thrive in an environment that values creativity and problem-solving, where diverse teams work together to tackle complex challenges and push the boundaries of what's possible. The company's commitment to professional growth is evident through its extensive learning and development opportunities, mentoring programs, and leadership training. Microsoft’s workspaces are designed to foster collaboration and flexibility, offering a range of amenities that support a healthy work-life balance. With a strong focus on inclusivity and community, Microsoft encourages its employees to contribute to meaningful projects and make a positive impact both within the company and in the broader world.</p>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold" onclick="showQuiz()">Take Quiz</button>
+    </div>
+</div>
+<div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+    <img class="rounded-lg-3" src="/static/SS2.png" alt="" width="720">
+</div>
+</div>
+
+<!-- Quiz Container -->
+<div class="con">
+    <div class="quiz-container" id="quizContainer">
+        <h2>English Grammar Test</h2>
+        <div class="question-number">1 - 3 of 9</div>
+    
+        <div class="question">
+            1. Which of the following sentences is correct?
+        </div>
+        <ul class="options">
+            <li>
+                <input type="radio" name="question1" value="1">
+                When it’s raining, people’s umbrellas are all you’re going to see from above.
+            </li>
+            <li>
+                <input type="radio" name="question1" value="2">
+                When its raining, people’s umbrellas are all your going to see from above.
+            </li>
+            <li>
+                <input type="radio" name="question1" value="3">
+                When it’s raining, peoples umbrella’s are all you’re going to see from above.
+            </li>
+            <li>
+                <input type="radio" name="question1" value="4">
+                None of the above
+            </li>
+        </ul>
+    
+        <button class="submit-btn">Submit</button>
+    </div>
+    </div>
+
+<script>
+function showQuiz() {
+    document.getElementById('quizContainer').style.display = 'block';
+}
+</script>
+
+
+{% endblock %}
