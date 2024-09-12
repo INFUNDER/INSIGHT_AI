@@ -58,5 +58,9 @@ def coursedecp3():
     amazon_questions = AmazonQues.query.all()
     return render_template('coursedecp3.html', questions=amazon_questions)
 
+@app.route('/aiinterview')
+def aiinterview():
+    return render_template('aiinterview.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
